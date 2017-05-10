@@ -18,6 +18,7 @@
   "homepage": "https://github.com/tim-hr/recursion-exercises#readme",
   "devDependencies": {
     "jest": "^20.0.0",
+    "jest-cli": "^20.0.0",
     "underscore": "^1.8.3"
   }
 }
