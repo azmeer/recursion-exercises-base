@@ -4,8 +4,8 @@ const _ = require('underscore');
 const generateGetElementFunction = function(property) {
   return function (root, target) {
     return _.filter(flattenTreeToArray(root), node => {
-      const regexp = `(\w+\s+)?${target}(\s+\w)?`;
-      return (node.nodeType === 1) && (node[property].match(regexp));
+      const regexp = `\\b${target}\\b`;
+      return (node.nodeType === 1) && (node[property].match(regexp) !== null);
     });
   };
 };
