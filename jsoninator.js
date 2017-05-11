@@ -11,8 +11,8 @@ const stringify = function(obj) {
     a boolean - return a string of 'true' or 'false'
     a number - return a string of the number
     null - return a string of 'null'
-    an object - recursively call stringify on keys and values of the object
     an array - recursively call stringify on the elements of the array
+    an object - recursively call stringify on keys and values of the object
   */
   if (typeof(obj) === 'string') return '\"'+obj+'\"';
   else if (typeof(obj) === 'number') return obj.toString();
