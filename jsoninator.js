@@ -5,15 +5,6 @@ const _ = require('underscore'); // the real one! :)
 // But you don't. So you're going to write it from scratch...
 
 const stringify = function(obj) {
-  /*
-    We test the object, and based on its type do the following:
-    a string - return the string enclosed in quotes
-    a boolean - return a string of 'true' or 'false'
-    a number - return a string of the number
-    null - return a string of 'null'
-    an array - recursively call stringify on the elements of the array
-    an object - recursively call stringify on keys and values of the object
-  */
   if (typeof(obj) === 'string') return '\"'+obj+'\"';
   else if (typeof(obj) === 'number') return obj.toString();
   else if (typeof(obj) === 'boolean') return obj ? 'true' : 'false';
