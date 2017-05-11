@@ -4,10 +4,12 @@ const _ = require('underscore');
 const generateGetElementFunction = function(property) {
   return function (root, target) {
     return _.filter(flattenTreeToArray(root), node => {
-      return (node.nodeType === 1) && (node[property].match(target));
+      const regexp = `(\w+s+)?${target}(s+\w)?`;
+      return (node.nodeType === 1) && (node[property].match(regexp));
     });
   };
 };
+
 
 const getElementById = function (root, id) {
   return _.find(flattenTreeToArray(root), node => {

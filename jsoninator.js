@@ -14,14 +14,14 @@ const stringify = function(obj) {
 };
 
 const stringifyArray = function(obj) {
-  return '[' +  _.map(obj, (element, index) => stringify(element)).join(',') + ']';
-}
+  return '[' +  _.map(obj, (element => stringify(element))).join(',') + ']';
+};
 
 const stringifyObject = function(obj) {
   return '{' +
     _.map(_.keys(obj), key => stringify(key) + ':' + stringify(obj[key])).join(',')
     + '}';
-}
+};
 
 module.exports = {
   stringify: stringify
